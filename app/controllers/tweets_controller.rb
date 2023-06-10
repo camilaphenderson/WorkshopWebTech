@@ -21,6 +21,12 @@ class TweetsController < ApplicationController
         end
     end
 
+    def destroy
+        tweet = tweet.find params[:id]
+        tweet.destroy
+        redirect_to tweets_path, notice: 'tweet eliminado con exito'
+    end 
+
     private
     def tweet_params
         params.require(:tweet).permit(:body)
