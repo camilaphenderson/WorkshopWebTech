@@ -4,6 +4,10 @@ class TweetsController < ApplicationController
     end
 
     def show
-        @tweet = Tweet.find_params[:id]         
+        @tweet = Tweet.find params[:id]
+    end
+
+    def new
+        @tweet = Tweet.new
     end
 end
